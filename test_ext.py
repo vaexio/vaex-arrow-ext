@@ -3,7 +3,7 @@ import pytest
 import pyarrow as pa
 import numpy as np
 
-from . import ext
+from vaex_arrow_ext import ext
 
 
 def test_madd():
