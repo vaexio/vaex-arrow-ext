@@ -36,6 +36,7 @@ jobs:
     - name: Build
       env:
         CIBW_BEFORE_BUILD: pip install pybind11  ${{ matrix.build-wheel }}
+        CIBW_REPAIR_WHEEL_COMMAND_LINUX: ""
         CIBW_BUILD: cp37*64
 #         CIBW_ENVIRONMENT_LINUX: "CFLAGS='-Wl,-strip-all' CXXFLAGS='-Wl,-strip-all'"
       run: |
