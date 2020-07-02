@@ -14,7 +14,6 @@ jobs:
         build-wheel:
         - https://files.pythonhosted.org/packages/9c/2e/793ea698895b6d131546ee1bad995ce6b690695edd8a2e0d3eb9568b0a65/pyarrow-0.17.1-cp37-cp37m-manylinux1_x86_64.whl
         - https://files.pythonhosted.org/packages/c4/dd/4d2ce1c64a94e5f35ae622cdfdda6eeab927cf6570d826dcfe09e9ba08f8/pyarrow-0.17.1-cp37-cp37m-manylinux2010_x86_64.whl
-        - https://files.pythonhosted.org/packages/14/78/dcd7f290cd018581b5c73f6c87e2b004f1161cdf6f55c7b2c87d78174592/pyarrow-0.17.1-cp37-cp37m-manylinux2014_x86_64.whl
         test-wheel:
         - https://files.pythonhosted.org/packages/9c/2e/793ea698895b6d131546ee1bad995ce6b690695edd8a2e0d3eb9568b0a65/pyarrow-0.17.1-cp37-cp37m-manylinux1_x86_64.whl
         - https://files.pythonhosted.org/packages/c4/dd/4d2ce1c64a94e5f35ae622cdfdda6eeab927cf6570d826dcfe09e9ba08f8/pyarrow-0.17.1-cp37-cp37m-manylinux2010_x86_64.whl
@@ -37,8 +36,8 @@ jobs:
       env:
         CIBW_BEFORE_BUILD: pip install pybind11  ${{ matrix.build-wheel }}
         CIBW_REPAIR_WHEEL_COMMAND_LINUX: ""
-        CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
-        CIBW_MANYLINUX_I686_IMAGE: manylinux2014
+        CIBW_MANYLINUX_X86_64_IMAGE: manylinux2010
+        CIBW_MANYLINUX_I686_IMAGE: manylinux2010
         CIBW_BUILD: cp37*64
 #         CIBW_ENVIRONMENT_LINUX: "CFLAGS='-Wl,-strip-all' CXXFLAGS='-Wl,-strip-all'"
       run: |
