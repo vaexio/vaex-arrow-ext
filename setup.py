@@ -19,10 +19,9 @@ for ext in ext_modules:
     # The Numpy C headers are currently required
     ext.include_dirs.append(np.get_include())
     ext.include_dirs.append(pa.get_include())
-    # ext.include_dirs.append(pybind11.get_include())
-    ext.include_dirs.append('/Users/maartenbreddels/src/vaex/packages/vaex-core/vendor/pybind11/include')
+    ext.include_dirs.append(pybind11.get_include())
 
-    ext.libraries.extend(pa.get_libraries())
+    ext.libraries.extend([k for k in pa.get_libraries() if k != "arrow"])
     ext.library_dirs.extend(pa.get_library_dirs())
 
     if os.name == 'posix':
