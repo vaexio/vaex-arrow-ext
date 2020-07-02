@@ -48,7 +48,8 @@ jobs:
         rm -rf vaex_arrow_ext
         pip install dist/*
         pip install ${{ matrix.test-wheel }} pytest
-        pytest
+        python test_ext.py
+        pytest -v -s
 
     - uses: actions/upload-artifact@v1
       with:

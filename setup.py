@@ -34,5 +34,6 @@ for ext in ext_modules:
 
 setup(
     name="vaex_arrow_ext",
-    ext_modules=ext_modules
+    ext_modules=ext_modules,
+    packages=["vaex_arrow_ext"],
 )
