@@ -4,7 +4,7 @@ from setuptools import setup, Extension
 # from Cython.Build import cythonize
 import numpy as np
 import pyarrow as pa
-# import pybind11
+import pybind11
 
 dirname = os.path.dirname(__file__)
 
