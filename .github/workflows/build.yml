@@ -37,7 +37,7 @@ jobs:
         ls -alh dist
         rm -rf vaex_arrow_ext
         pip install dist/*
-        pip install ${{ matrix.test-wheel }} pytest
+        pip install pyarrow pytest
         python test_ext.py
         pytest -v -s
 

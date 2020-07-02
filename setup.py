@@ -21,7 +21,9 @@ for ext in ext_modules:
     ext.include_dirs.append(pa.get_include())
     ext.include_dirs.append(pybind11.get_include())
 
-    # ext.libraries.extend([k for k in pa.get_libraries() if k != "arrow"])
+    if os.name == 'nt':  # windows
+        # only for windows we link
+        ext.libraries.extend(pa.get_libraries())
     ext.library_dirs.extend(pa.get_library_dirs())
 
     if os.name == 'posix':
